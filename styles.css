@@ -1,0 +1,714 @@
+/* متغیرهای رنگ و استایل */
+:root {
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --primary-light: #dbeafe;
+    --secondary: #6b7280;
+    --success: #10b981;
+    --accent: #ef4444;
+    --warning: #f59e0b;
+    --info: #06b6d4;
+    --gray: #6b7280;
+    --gray-light: #f8fafc;
+    --gray-border: #e2e8f0;
+    --dark: #1e293b;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --border-radius: 16px;
+    --border-radius-sm: 12px;
+}
+
+/* ریست استایل‌ها */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* استایل‌های هدر */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.header-content h1 {
+    color: var(--dark);
+    font-size: 2rem;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wallet-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.connect-btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-sm);
+    font-family: 'Vazirmatn', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.connect-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.connect-btn:disabled {
+    background: var(--secondary);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.wallet-address {
+    background: var(--gray-light);
+    padding: 10px 16px;
+    border-radius: var(--border-radius-sm);
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 0.9rem;
+    border: 2px solid var(--gray-border);
+    box-shadow: var(--shadow);
+}
+
+/* استایل‌های محتوای اصلی */
+main {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.user-panel, .tree-panel {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.user-panel h2, .tree-panel h2 {
+    color: var(--dark);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 10px;
+}
+
+/* استایل‌های اطلاعات کاربر */
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 2px solid var(--gray-border);
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background: var(--gray-light);
+    padding: 12px 10px;
+    border-radius: var(--border-radius-sm);
+    transform: translateX(-5px);
+}
+
+.info-label {
+    color: var(--gray);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.info-value {
+    color: var(--dark);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--gray-light), white);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    border: 2px solid var(--gray-border);
+    box-shadow: var(--shadow);
+}
+
+/* استایل‌های درخت */
+.tree-header {
+    margin-bottom: 25px;
+}
+
+.header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.current-user {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: var(--shadow);
+}
+
+.tree-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.control-btn {
+    background: var(--gray-light);
+    border: 2px solid var(--gray-border);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-sm);
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.control-btn:hover {
+    background: var(--primary-light);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tree-container {
+    min-height: 700px;
+    position: relative;
+    overflow-x: auto;
+    width: 100%;
+    background: rgba(248, 250, 252, 0.5);
+    border-radius: var(--border-radius);
+    padding: 10px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--gray);
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.loading {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.error {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--accent);
+    font-weight: 700;
+    background: rgba(239, 68, 68, 0.1);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--accent);
+}
+
+/* استایل‌های درخت */
+.compact-tree {
+    width: 100%;
+    padding: 30px;
+    min-width: 1400px;
+}
+
+.tree-level {
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.level-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.level-badge {
+    background: linear-gradient(135deg, var(--secondary), var(--gray));
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 800;
+    display: inline-block;
+    box-shadow: var(--shadow);
+}
+
+.level-nodes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 60px;
+    width: 100%;
+    padding: 0 30px;
+    overflow-x: auto;
+}
+
+/* استایل‌های نود */
+.node-box {
+    background: white;
+    border: 3px solid var(--primary);
+    border-radius: var(--border-radius-sm);
+    padding: 15px;
+    text-align: center;
+    box-shadow: var(--shadow-xl);
+    min-width: 180px;
+    max-width: 200px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.node-box:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: var(--shadow-xl);
+}
+
+.node-box.current-user {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border-color: var(--primary-dark);
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+}
+
+.node-box.expanded {
+    border-color: var(--success);
+    border-width: 4px;
+    background: linear-gradient(135deg, #f0fdf4, white);
+}
+
+.node-box.collapsed {
+    border-color: var(--warning);
+    border-width: 3px;
+    background: linear-gradient(135deg, #fffbeb, white);
+}
+
+.node-box.error-node {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, #fef2f2, white);
+}
+
+.node-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--gray-border);
+}
+
+.node-id {
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: var(--primary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.node-box.current-user .node-id {
+    color: white;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    box-shadow: var(--shadow);
+}
+
+.current-badge {
+    background: var(--success);
+    color: white;
+}
+
+.error-badge {
+    background: var(--accent);
+    color: white;
+}
+
+.expand-badge {
+    background: var(--warning);
+    color: white;
+    cursor: pointer;
+}
+
+.node-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    padding: 4px 0;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.info-line:hover {
+    background: var(--gray-light);
+    padding: 4px 6px;
+}
+
+.info-label {
+    color: var(--gray);
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex: 1;
+    text-align: right;
+    padding-left: 8px;
+}
+
+.info-value {
+    color: var(--dark);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--gray-light), white);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    border: 2px solid var(--gray-border);
+    flex: 1;
+    text-align: center;
+    min-width: 60px;
+    box-shadow: var(--shadow);
+}
+
+.node-box.current-user .info-label {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.node-box.current-user .info-value {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* استایل‌های connector */
+.connector-level {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.connectors-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.parent-connectors {
+    display: flex;
+    gap: 80px;
+    position: relative;
+    align-items: flex-start;
+}
+
+.branch-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-width: 100px;
+}
+
+.connector-line {
+    width: 4px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
+    margin-bottom: 10px;
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+}
+
+.branch-label {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 800;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 12px;
+    border: 2px solid var(--primary);
+    box-shadow: var(--shadow);
+    white-space: nowrap;
+}
+
+/* نمایش خلاصه زیرمجموعه */
+.children-summary {
+    margin-top: 10px;
+    padding: 6px 8px;
+    background: linear-gradient(135deg, var(--primary-light), #e0f2fe);
+    border-radius: 8px;
+    font-size: 0.75rem;
+    color: var(--primary-dark);
+    font-weight: 800;
+    border: 2px solid var(--primary);
+    box-shadow: var(--shadow);
+}
+
+/* نمایش واکنش‌گرا */
+@media (max-width: 1400px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .compact-tree {
+        min-width: auto;
+        padding: 20px;
+    }
+    
+    .level-nodes {
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+    
+    .node-box {
+        min-width: 160px;
+        max-width: 170px;
+    }
+    
+    .connectors-container {
+        gap: 60px;
+    }
+    
+    .parent-connectors {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 1200px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .tree-controls {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .header-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .user-panel, .tree-panel {
+        padding: 20px;
+    }
+    
+    .node-box {
+        min-width: 140px;
+        max-width: 150px;
+        padding: 12px;
+    }
+    
+    .node-id {
+        font-size: 1.1rem;
+    }
+    
+    .info-line {
+        font-size: 0.8rem;
+    }
+    
+    .connectors-container {
+        gap: 40px;
+    }
+    
+    .parent-connectors {
+        gap: 30px;
+    }
+    
+    .level-nodes {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 5px;
+    }
+    
+    .user-panel, .tree-panel {
+        padding: 15px;
+    }
+    
+    .node-box {
+        min-width: 130px;
+        max-width: 140px;
+        padding: 10px;
+    }
+    
+    .level-nodes {
+        gap: 20px;
+    }
+    
+    .connectors-container {
+        gap: 20px;
+    }
+    
+    .header-content h1 {
+        font-size: 1.4rem;
+    }
+}
+
+/* انیمیشن‌ها */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: scale(0.8) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+.node-box {
+    animation: slideIn 0.5s ease-out;
+}
+
+.tree-level {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* استایل برای نودهای قابل کلیک */
+.clickable-node {
+    cursor: pointer;
+}
+
+.clickable-node:hover {
+    border-color: var(--warning);
+}
+
+/* استایل برای نمایش رابطه */
+.relation-line {
+    position: absolute;
+    background: linear-gradient(90deg, var(--primary), var(--info));
+    height: 3px;
+    z-index: 1;
+    opacity: 0.7;
+    border-radius: 2px;
+}
+
+/* اسکرول بار سفارشی */
+.tree-container::-webkit-scrollbar {
+    height: 12px;
+}
+
+.tree-container::-webkit-scrollbar-track {
+    background: var(--gray-light);
+    border-radius: 10px;
+}
+
+.tree-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 10px;
+}
+
+.tree-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--primary-dark), #1e40af);
+}
