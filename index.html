@@ -1,118 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ژنولوژی شبکه</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@latest/Vazirmatn-font-face.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-</head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="header-content">
-                <h1>🌳 ژنولوژی شبکه</h1>
-                <div class="wallet-section">
-                    <button id="connectWallet" class="connect-btn">
-                        🔗 اتصال کیف پول
-                    </button>
-                    <div id="walletAddress" class="wallet-address">
-                        اتصال برقرار نشده
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main>
-            <!-- User Info -->
-            <div class="user-panel">
-                <h2>👤 اطلاعات کاربر</h2>
-                <div id="userInfo" class="user-info">
-                    <p>لطفاً کیف پول خود را متصل کنید</p>
-                </div>
-            </div>
-
-            <!-- Tree -->
-            <div class="tree-panel">
-                <div class="tree-header">
-                    <h2>📊 شبکه زیرمجموعه</h2>
-                    <div class="header-controls">
-                        <div class="current-user">
-                            <strong>کاربر فعلی:</strong>
-                            <span id="currentUserId">-</span>
-                        </div>
-                        <div class="tree-controls">
-                            <button id="expandAll" class="control-btn">📂 باز کردن همه</button>
-                            <button id="collapseAll" class="control-btn">📁 بستن همه</button>
-                            <button id="refreshTree" class="control-btn">🔄 بروزرسانی</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="treeContainer" class="tree-container">
-                    <div class="empty-state">
-                        <div class="empty-icon">🌳</div>
-                        <p>پس از اتصال کیف پول، شبکه شما اینجا نمایش داده می‌شود</p>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <!-- Navigation Controls -->
-    <div class="navigation-controls">
-        <button id="zoomIn" class="nav-btn" title="بزرگنمایی">🔍 +</button>
-        <button id="zoomOut" class="nav-btn" title="کوچکنمایی">🔍 -</button>
-        <button id="centerView" class="nav-btn" title="مرکز کردن">🎯</button>
-        <button id="fitToScreen" class="nav-btn" title="اندازه صفحه">📱</button>
-        <button id="resetView" class="nav-btn" title="بازنشانی">🔄</button>
-    </div>
-
-    <!-- Tree Stats -->
-    <div class="tree-stats">
-        <div class="stats-header">
-            <h3>📈 آمار شبکه</h3>
-            <button id="closeStats" class="close-btn">×</button>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label">تعداد کاربران:</span>
-            <span id="userCount" class="stat-value">0</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label">عمق شبکه:</span>
-            <span id="networkDepth" class="stat-value">0</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label">کاربران فعال:</span>
-            <span id="activeUsers" class="stat-value">0</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label">زیرمجموعه کل:</span>
-            <span id="totalChildren" class="stat-value">0</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label">کاربران باز شده:</span>
-            <span id="expandedUsers" class="stat-value">0</span>
-        </div>
-    </div>
-
-    <!-- Loading Overlay -->
-    <div id="loadingOverlay" class="loading-overlay">
-        <div class="loading-content">
-            <div class="loading-spinner"></div>
-            <div class="loading-text" id="loadingText">در حال بارگذاری شبکه...</div>
-            <div class="loading-progress">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
-                <span class="progress-text" id="progressText">0%</span>
-            </div>
-        </div>
-    </div>
-
-    <script src="app.js"></script>
-</body>
-</html>
